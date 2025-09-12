@@ -1,0 +1,150 @@
+:root{
+  color-scheme: light dark;
+  --bg: #000;
+  --fg: #e8e8ea;
+  --muted:#9aa0a6;
+  --accent:#ff2d55;      /* heart color */
+  --ok:#67e480;          /* yes */
+  --warn:#f7b733;        /* maybe */
+  --danger:#ff6b6b;      /* no */
+  --radius: 16px;
+  --space: clamp(14px, 3vw, 24px);
+  --btn-h: 48px;
+}
+
+/* Reset-ish */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+}
+
+/* Full-screen sections */
+.screen {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: max(var(--space), env(safe-area-inset-top)) var(--space) max(calc(var(--space) + env(safe-area-inset-bottom)), var(--space));
+}
+
+/* Screen A specifics */
+#screen-a { background: #000; }
+.heart-btn{
+  background: transparent;
+  border: none;
+  font-size: clamp(48px, 16vw, 140px);
+  line-height: 1;
+  cursor: pointer;
+  color: var(--accent);
+  filter: drop-shadow(0 4px 24px rgba(255,45,85,.35));
+  transition: transform .15s ease;
+  min-height: 44px; min-width: 44px;
+}
+.heart-btn:active { transform: scale(.96); }
+.heart-btn:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; border-radius: 10px; }
+
+/* Split panels that slide away */
+.panel{
+  position: absolute; left:0; right:0; background:#000; pointer-events:none;
+}
+.panel.top{ top:0; height:50%; }
+.panel.bottom{ bottom:0; height:50%; }
+
+body.a-splitting .panel.top{ animation: slideUp .6s ease forwards; }
+body.a-splitting .panel.bottom{ animation: slideDown .6s ease forwards; }
+body.a-splitting .heart-btn{ animation: fadeOut .4s ease forwards; }
+
+@keyframes slideUp   { to { transform: translateY(-100%); } }
+@keyframes slideDown { to { transform: translateY( 100%); } }
+@keyframes fadeOut   { to { opacity: 0; transform: scale(.9);} }
+
+/* Screen B layout */
+#screen-b .content{
+  width: 100%;
+  max-width: 720px;
+  display: grid;
+  gap: var(--space);
+  align-items: center;
+}
+.video-wrap{
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #111;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+.video{ width:100%; height:100%; border:0; display:block; }
+.primary{
+  height: var(--btn-h);
+  border-radius: var(--radius);
+  border: 1px solid #333;
+  background: #151515;
+  color: var(--fg);
+  font-weight: 600;
+  letter-spacing: .3px;
+  cursor: pointer;
+}
+.primary:focus-visible{ outline:2px solid var(--fg); outline-offset: 2px; }
+
+/* Screen C: question and buttons */
+#screen-c .content{
+  width: 100%;
+  max-width: 560px;
+  display: grid;
+  gap: calc(var(--space)*1.2);
+  text-align: center;
+}
+.title{
+  margin: 0;
+  font-size: clamp(28px, 7vw, 52px);
+}
+.actions{
+  display: grid;
+  gap: var(--space);
+}
+.actions button{
+  height: var(--btn-h);
+  border-radius: var(--radius);
+  border: 1px solid #2a2a2a;
+  background: #111;
+  color: var(--fg);
+  font-weight: 700;
+  cursor: pointer;
+}
+.actions .yes{ border-color: #234b2d; background: #0e1b12; }
+.actions .no{  border-color: #4b2020; background: #1b0e0e; }
+.actions .maybe{ border-color: #4b3a20; background: #1b150e; }
+
+.actions .yes:hover{ box-shadow: 0 0 0 2px rgba(103,228,128,.25) inset; }
+.actions .no:hover{  box-shadow: 0 0 0 2px rgba(255,107,107,.25) inset; }
+.actions .maybe:hover{ box-shadow: 0 0 0 2px rgba(247,183,51,.25) inset; }
+
+/* Heart particles */
+#particles{
+  position: fixed; inset: 0; pointer-events: none; overflow: hidden;
+}
+.particle{
+  position: absolute;
+  font-size: 16px;
+  color: var(--accent);
+  will-change: transform, opacity;
+  text-shadow: 0 6px 18px rgba(255,45,85,.35);
+  user-select: none;
+}
+@keyframes floatUp {
+  0%   { transform: translate(var(--x,0), var(--y,0)) scale(var(--s,1)); opacity: 1; }
+  100% { transform: translate(calc(var(--x,0) + var(--dx,0)), calc(var(--y,0) - var(--dy,160px))) scale(calc(var(--s,1) * 1.6)); opacity: 0; }
+}
+
+/* Visibility control via [hidden] */
+[hidden]{ display: none !important; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+}
