@@ -118,11 +118,11 @@ body.a-splitting .heart-btn{ animation: fadeOut .4s ease forwards; }
 }
 .actions .yes{ border-color: #234b2d; background: #0e1b12; }
 .actions .no{  border-color: #4b2020; background: #1b0e0e; }
-.actions .maybe{ border-color: #4b3a20; background: #1b150e; }
+.actions .maybe{ border-color: #4b2020; background: #1b0e0e; }
 
 .actions .yes:hover{ box-shadow: 0 0 0 2px rgba(103,228,128,.25) inset; }
 .actions .no:hover{  box-shadow: 0 0 0 2px rgba(255,107,107,.25) inset; }
-.actions .maybe:hover{ box-shadow: 0 0 0 2px rgba(247,183,51,.25) inset; }
+.actions .maybe:hover{ box-shadow: 0 0 0 2px rgba(255,107,107,.25) inset; }
 
 /* Heart particles */
 #particles{

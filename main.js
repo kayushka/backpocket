@@ -54,8 +54,16 @@ noBtn.addEventListener('click', () => {
 });
 
 maybeBtn.addEventListener('click', () => {
-  // polite shrug: a few lazy hearts
-  burstHearts(6, { gentle: true });
+  // lil' shake for Screen C
+  screenC.animate(
+    [
+      { transform: 'translateX(0)' },
+      { transform: 'translateX(-6px)' },
+      { transform: 'translateX(6px)' },
+      { transform: 'translateX(0)' },
+    ],
+    { duration: 220, easing: 'ease-out' }
+  );
 });
 
 /* --- Heart particles --- */
