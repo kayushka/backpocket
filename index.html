@@ -2,63 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>backpocket</title>
+  <title>Us 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-state="a">
-  <!-- Screen A: Black page, only a heart. Splits on click -->
-  <section id="screen-a" class="screen" aria-label="Intro">
-    <!-- Split panels that slide away -->
-    <div class="panel top" aria-hidden="true"></div>
-    <div class="panel bottom" aria-hidden="true"></div>
+<body>
 
-    <button id="heart" class="heart-btn" aria-label="Open">
-      <span aria-hidden="true">❤</span>
-    </button>
-  </section>
+  <!-- LANDING -->
+  <div id="landing">
+    <div class="landing-top"></div>
+    <div class="landing-bottom"></div>
+    <button id="landing-heart" aria-label="open our page">❤️</button>
+  </div>
 
-  <!-- Screen B: YouTube + button -->
-  <section id="screen-b" class="screen" hidden aria-label="Video">
-    <div class="content">
-      <div class="video-wrap">
-        <iframe
-          id="yt"
-          class="video"
-          title="YouTube video"
-          src="https://www.youtube.com/embed/r5pYL-Y--To"
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <button id="to-c" class="primary">click here once clarinet solo starts</button>
-    </div>
-  </section>
+  <!-- APP -->
+  <div id="app">
+    <header id="top-header">
+      <h1 id="home-btn">Hi, it’s us 💕</h1>
+    </header>
 
-  <!-- Screen C: Will you? -->
-  <section id="screen-c" class="screen" hidden aria-label="Question">
-    <div class="content">
-      <h1 class="title">Wil je verkering met me?</h1>
-      <div class="actions">
-        <button id="yes" class="yes">JA</button>
-        <button id="no" class="no">NE</button>
-        <button id="maybe" class="maybe">MISSCHIEN</button>
-      </div>
-    </div>
-  </section>
+    <!-- HUB VIEW -->
+    <main id="hub-view">
+      <section id="top-bar">
+        <div>
+          <div id="days-counter">0 days of us</div>
+          <small style="color:rgba(54,43,57,0.5);">growing since... always 🥹</small>
+        </div>
+        <div class="soup-placeholder">🥣</div>
+      </section>
 
-  <!-- container for heart particles -->
-  <div id="particles" aria-hidden="true"></div>
+      <section id="month-selector" aria-label="choose month">
+        <button class="month-btn" data-month="0">0</button>
+        <button class="month-btn" data-month="1">1</button>
+        <button class="month-btn disabled" data-month="2" disabled>2</button>
+        <button class="month-btn disabled" data-month="3" disabled>3</button>
+        <button class="month-btn disabled" data-month="4" disabled>4</button>
+        <button class="month-btn disabled" data-month="5" disabled>5</button>
+        <button class="month-btn disabled" data-month="6" disabled>6</button>
+        <button class="month-btn disabled" data-month="7" disabled>7</button>
+        <button class="month-btn disabled" data-month="8" disabled>8</button>
+        <button class="month-btn disabled" data-month="9" disabled>9</button>
+        <button class="month-btn disabled" data-month="10" disabled>10</button>
+        <button class="month-btn disabled" data-month="11" disabled>11</button>
+        <button class="month-btn disabled" data-month="12" disabled>12</button>
+      </section>
 
-  <!-- Screen D: Month1 -->
-  <section id="screen-d" class="screen" hidden aria-label="Month1">
-    <div class="content">
-      <h1 class="title">Month 1: We managed to get lost and find each other again (figuratively and literally)</h1>
-      <div class="italy-pic">
-        <img src="assets/italy.jpg" alt="Italy trip photo" class="italy-img" />
-      </div>
-    </div>
-  </section>
+      <section id="haiku">
+        <p>you're the magic salt<br>
+        I never knew I needed<br>
+        in this soup of life.</p>
+      </section>
+    </main>
+
+    <!-- MONTH VIEW -->
+    <main id="month-view">
+      <div id="month-content"></div>
+    </main>
+
+    <footer id="footer">
+      <p>Made with 🫶 by K</p>
+    </footer>
+  </div>
 
   <script src="main.js"></script>
 </body>
