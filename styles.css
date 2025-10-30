@@ -67,23 +67,47 @@ header#top-header {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: 64px;
-  background: rgba(253, 246, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,0.5);
   display: flex;
   align-items: center;
   justify-content: center;
+  background: radial-gradient(circle at top, rgba(253, 246, 255, 0.8) 0%, rgba(253, 246, 255, 0) 70%);
+  backdrop-filter: blur(14px);
   z-index: 20;
+  pointer-events: none; /* background not clickable */
 }
-#home-btn {
-  margin: 0;
-  font-size: 1.08rem;
-  font-weight: 600;
-  cursor: pointer;
-  background: rgba(185,156,255,0.3);
-  padding: .35rem .9rem;
+
+.header-pill {
+  pointer-events: auto; /* pill IS clickable */
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 122, 47, 0.25);
   border-radius: 999px;
+  padding: .55rem 1.25rem .55rem 1.1rem;
+  font-weight: 600;
+  font-size: .9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  box-shadow: 0 8px 24px rgba(185, 156, 255, 0.25);
+  color: #3a3041;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
+
+.header-heart {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #ff7a2f 0%, #ffbe8d 100%);
+  font-size: .75rem;
+}
+
+.header-pill:active {
+  transform: translateY(1px);
+}
+
 footer#footer {
   position: fixed;
   bottom: 0; left: 0; right: 0;
