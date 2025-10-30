@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Month buttons
   monthButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      if (btn.disabled) return;
+    const month = btn.dataset.month;
+    if (btn.disabled) {
+      showToast(`Month ${month} isn’t cooked yet 👀`);
+      return;
+    }
       openMonth(btn.dataset.month);
     });
   });
@@ -108,20 +112,9 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="photo-frame gradient-frame">
           <img src="assets/italy.jpg" alt="Italy trip photo" />
         </div>
-        <p>We managed to get lost and find each other again (figuratively and literally)</p>
+        <p>We managed to get lost and find each other again (figuratively and literally) </p>
       </div>`;
   }
-
-  monthButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const month = btn.dataset.month;
-    if (btn.disabled) {
-      showToast(`Month ${month} isn’t cooked yet 👀`);
-      return;
-    }
-    openMonth(month);
-    });
-  });
 
   function showToast(message) {
     // remove existing toast if present
