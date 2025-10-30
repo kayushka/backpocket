@@ -20,12 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Month buttons
   monthButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-      const month = btn.dataset.month;
-      if (btn.disabled) {
-        showToast(`Month ${month} isn’t cooked yet 👀`);
-        return;
-      }
-      openMonth(btn.dataset.month);
+        const month = btn.dataset.month;
+
+        if (btn.classList.contains('disabled')) {
+          showToast(`Month ${month} isn’t cooked yet 👀`);
+          return;
+        }
+        
+        openMonth(btn.dataset.month);
     });
   });
 
@@ -108,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <div class="month-screen" data-month="1">
         <h2>Month 1 🍊</h2>
-        <p style="color:rgba(54,43,57,0.55); margin-top:-.3rem;">Highligh: Italy trip</p>
+        <p style="color:rgba(54,43,57,0.55); margin-top:-.3rem;">Highlight: Italy trip</p>
         <div class="photo-frame gradient-frame">
           <img src="assets/italy.jpg" alt="Italy trip photo" />
         </div>
