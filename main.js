@@ -5,6 +5,7 @@ const body      = document.body;
 const screenA   = qs('#screen-a');
 const screenB   = qs('#screen-b');
 const screenC   = qs('#screen-c');
+const screenD   = qs('#screen-d');
 const heartBtn  = qs('#heart');
 const toCBtn    = qs('#to-c');
 const yesBtn    = qs('#yes');
@@ -17,6 +18,7 @@ function setState(state){
   screenA.hidden = state !== 'a';
   screenB.hidden = state !== 'b';
   screenC.hidden = state !== 'c';
+  screenD.hidden = state !== 'd';
 }
 
 /* --- Screen A -> split, then go to B --- */
@@ -38,6 +40,7 @@ toCBtn.addEventListener('click', () => {
 /* --- C: button behaviors --- */
 yesBtn.addEventListener('click', () => {
   burstHearts(28);
+  setState('d');
 });
 
 noBtn.addEventListener('click', () => {

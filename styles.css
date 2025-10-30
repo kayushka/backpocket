@@ -124,6 +124,20 @@ body.a-splitting .heart-btn{ animation: fadeOut .4s ease forwards; }
 .actions .no:hover{  box-shadow: 0 0 0 2px rgba(255,107,107,.25) inset; }
 .actions .maybe:hover{ box-shadow: 0 0 0 2px rgba(255,107,107,.25) inset; }
 
+.italy-pic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.italy-img{
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  display: block;
+}
+
 /* Heart particles */
 #particles{
   position: fixed; inset: 0; pointer-events: none; overflow: hidden;
