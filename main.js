@@ -112,7 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="photo-frame gradient-frame">
           <img src="assets/italy.jpg" alt="Italy trip photo" />
         </div>
-        <p>We managed to get lost and find each other again (figuratively and literally) </p>
+        <p>We managed to get lost and find each other again (figuratively and literally)</p>
+        <br/>
+        <br/>
+        <p>I hope you enjoyed the cheesy haiku I wrote for you on the main page 🤭</p>
       </div>`;
   }
 
