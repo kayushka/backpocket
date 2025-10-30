@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast(`Month ${month} isn’t cooked yet 👀`);
           return;
         }
-        
+
         openMonth(btn.dataset.month);
     });
   });
