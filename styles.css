@@ -2,7 +2,10 @@
   --bg: #fdf6ff;
   --accent: #ff9f43;
   --accent-soft: rgba(255, 159, 67, 0.16);
+  --orange: #ff7a2f;             
+  --orange-soft: rgba(231, 192, 169, 0.12);
   --violet: #b99cff;
+  --violet-soft: rgba(173, 150, 226, 0.2);
   --text: #362b39;
   --muted: rgba(54, 43, 57, 0.6);
   --radius-lg: 1.25rem;
@@ -14,7 +17,7 @@
 body {
   margin: 0;
   font-family: "Quicksand", system-ui, sans-serif;
-  background: radial-gradient(circle at top, #fff0e5 0%, #fdf6ff 30%, #ffffff 80%);
+  background: radial-gradient(circle at top, #fff0e5 0%, var(--violet-soft) 30%, var(--orange-soft) 80%);
   color: var(--text);
   min-height: 100vh;
 }
@@ -70,15 +73,14 @@ header#top-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top, rgba(253, 246, 255, 0.8) 0%, rgba(253, 246, 255, 0) 70%);
-  backdrop-filter: blur(14px);
+  background: rgba(253, 246, 255, 0.85);
   z-index: 20;
   pointer-events: none; /* background not clickable */
 }
 
 .header-pill {
   pointer-events: auto;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), #8f3102);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), #c59fdb);
   border: 1px solid rgba(255, 122, 47, 0.25);
   border-radius: 999px;
   padding: .55rem 1.25rem .55rem 1.1rem;
