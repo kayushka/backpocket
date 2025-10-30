@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const landing = document.getElementById('landing');
   const heartBtn = document.getElementById('landing-heart');
-  const app = document.getElementById('app');
   const hubView = document.getElementById('hub-view');
   const monthView = document.getElementById('month-view');
   const monthContent = document.getElementById('month-content');
