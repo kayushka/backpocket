@@ -77,8 +77,8 @@ header#top-header {
 }
 
 .header-pill {
-  pointer-events: auto; /* pill IS clickable */
-  background: rgba(255, 255, 255, 0.92);
+  pointer-events: auto;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 245, 235, 0.88));
   border: 1px solid rgba(255, 122, 47, 0.25);
   border-radius: 999px;
   padding: .55rem 1.25rem .55rem 1.1rem;
@@ -100,7 +100,6 @@ header#top-header {
   border-radius: 999px;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle, #ff7a2f 0%, #ffbe8d 100%);
   font-size: .75rem;
 }
 
@@ -126,27 +125,43 @@ footer#footer {
 #hub-view { padding: 1.1rem 1.1rem 5rem; }
 
 #top-bar {
-  background: linear-gradient(120deg, rgba(255, 159, 67, .24), rgba(185, 156, 255, .5));
-  border-radius: 1.1rem;
-  padding: 1rem 1.1rem;
+  background: linear-gradient(135deg, rgba(255, 122, 47, 0.35), rgba(185, 156, 255, 0.55));
+  border-radius: 1.35rem;
+  padding: 1.05rem 1.1rem 1.05rem 1.1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
   margin-bottom: 1.1rem;
-  box-shadow: 0 10px 20px rgba(185, 156, 255, 0.2);
+  box-shadow: 0 12px 30px rgba(185, 156, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(8px);
 }
-.soup-placeholder {
-  width:38px; height:38px;
-  background: rgba(255,255,255,0.5);
-  border-radius: 1rem;
-  border:1px solid rgba(255,255,255,0.5);
-  display:flex; align-items:center; justify-content:center;
-  font-size:1.1rem;
-}
+
 #days-counter {
-  font-weight: 600;
-  font-size: 1.05rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #2f2437;
+}
+
+.topbar-sub {
+  display: block;
+  margin-top: .15rem;
+  font-size: .78rem;
+  color: rgba(47, 36, 55, 0.7);
+}
+
+.soup-placeholder {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.07);
 }
 
 #month-selector {
