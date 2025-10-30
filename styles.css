@@ -36,6 +36,8 @@ body {
   font-size: 5rem;
   cursor: pointer;
   transition: transform .2s ease;
+  position: relative;
+  z-index: 3;
 }
 #landing-heart:hover { transform: scale(1.1); }
 
