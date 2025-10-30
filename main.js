@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <button id="show-question-btn">click here once clarinet solo starts ➜</button>
         <div id="question-step" style="display:none;">
-          <p>Will you be my boyfriend? 🥹</p>
+          <p>Wil je verkering met me? 🥹</p>
           <button id="answer-yes">JA 💘</button>
           <button id="answer-no">NE 😈</button>
           <button id="answer-no">MISSCHIEN 😈</button>
