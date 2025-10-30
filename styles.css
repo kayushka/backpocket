@@ -86,10 +86,9 @@ header#top-header {
   border-radius: 999px;
   padding: .55rem 1.25rem .55rem 1.1rem;
   font-weight: 600;
-  font-size: .9rem;
+  font-size: 1rem;
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: .45rem;
   box-shadow: 0 8px 24px rgba(185, 156, 255, 0.25);
   color: #3a3041;
@@ -197,7 +196,7 @@ footer#footer {
 }
 
 #haiku {
-  background: rgba(255,255,255,.6);
+  background: var(--orange-soft);
   border: 1px solid #fdf6ff;
   border-radius: 1rem;
   padding: 1rem;
