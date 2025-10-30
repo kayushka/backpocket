@@ -188,11 +188,11 @@ footer#footer {
   box-shadow: 0 12px 20px rgba(185, 156, 255, 0.2);
 }
 .month-btn.disabled {
-  background: rgba(255, 255, 255, .35);
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px dashed rgba(185, 156, 255, 0.4);
   color: rgba(54, 43, 57, 0.35);
-  cursor: not-allowed;
-  box-shadow: none;
-  border: 1px dashed rgba(185,156,255,0.35);
+  cursor: default;
+  pointer-events: auto;  /* 👈 important, we still want clicks for toast */
 }
 
 #haiku {

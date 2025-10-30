@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Month buttons
   monthButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-    const month = btn.dataset.month;
-    if (btn.disabled) {
-      showToast(`Month ${month} isn’t cooked yet 👀`);
-      return;
-    }
+      btn.addEventListener('click', () => {
+      const month = btn.dataset.month;
+      if (btn.disabled) {
+        showToast(`Month ${month} isn’t cooked yet 👀`);
+        return;
+      }
       openMonth(btn.dataset.month);
     });
   });
