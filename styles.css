@@ -81,7 +81,7 @@ header#top-header {
 .header-pill {
   pointer-events: auto;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), #c59fdb);
-  border: 1px solid rgba(255, 122, 47, 0.25);
+  border: 3px solid #ffffff;
   border-radius: 999px;
   padding: .55rem 1.25rem .55rem 1.1rem;
   font-weight: 600;
@@ -136,7 +136,7 @@ footer#footer {
   gap: 1rem;
   margin-bottom: 1.1rem;
   box-shadow: 0 12px 30px rgba(185, 156, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.45);
+  border: 1px solid #ffffff;
   backdrop-filter: blur(8px);
 }
 
