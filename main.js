@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Landing -> App
   heartBtn.addEventListener('click', () => {
+  console.log('🧡 heart clicked');
     landing.classList.add('landing-open');
     setTimeout(() => {
+    console.log('⏱ hiding landing, showing app');
       landing.style.display = 'none';
       app.style.display = 'block';
-    }, 600);
+    }, 800);
   });
 
   // Month buttons
