@@ -136,6 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       t.remove();
     }, 2500);
+  }
 
   // Swipe right to go back
   function enableSwipeBack() {

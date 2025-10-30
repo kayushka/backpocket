@@ -258,4 +258,7 @@ footer#footer {
   }
 }
 
-
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;  /* stops double-tap zoom */
+}
