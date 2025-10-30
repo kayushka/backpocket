@@ -164,6 +164,29 @@ footer#footer {
   color: var(--muted);
 }
 
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 70px; /* above footer */
+  transform: translateX(-50%);
+  background: rgba(54, 43, 57, 0.95);
+  color: #fff;
+  padding: .6rem 1rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.12);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+  animation: toast-in .15s ease;
+}
+
+@keyframes toast-in {
+  from { opacity: 0; transform: translate(-50%, 10px); }
+  to   { opacity: 1; transform: translate(-50%, 0); }
+}
+
 /* === MONTH VIEW === */
 #month-view {
   display: none;
@@ -190,13 +213,28 @@ footer#footer {
 .video-wrap iframe {
   width: 100%; height: 100%; display: block;
 }
-#show-question-btn, #answer-yes, #answer-no {
+#show-question-btn, #answer-yes, #answer-no, #answer-maybe {
   border: none; border-radius: 999px;
   padding: .6rem 1.1rem; font-weight: 600; cursor: pointer;
 }
 #show-question-btn { background: var(--violet); color: white; align-self: flex-start; }
 #answer-yes { background: var(--accent); color: #fff; margin-right: .5rem; }
 #answer-no { background: rgba(0,0,0,0.04); color: var(--text); }
+#answer-maybe { background: rgba(0,0,0,0.04); color: var(--text); }
+.gradient-frame {
+  background: linear-gradient(140deg, rgba(185,156,255,.55), rgba(255,159,67,.4));
+  border-radius: 1rem;
+  height: 180px;
+  overflow: hidden;              
+}
+
+.gradient-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          
+  border-radius: inherit;
+  display: block;
+}
 
 /* === FLOATING HEARTS === */
 .floating-heart {
@@ -211,10 +249,16 @@ footer#footer {
   100% { transform: translateY(-100vh) translateX(20px) scale(.5); opacity: 0; }
 }
 
+/* === OTHER === */
 /* Desktop center constraint */
 @media (min-width: 768px) {
   #hub-view, #month-view {
     max-width: 700px;
     margin: 0 auto;
   }
+}
+
+html, body {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;  /* stops double-tap zoom */
 }

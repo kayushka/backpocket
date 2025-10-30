@@ -50,8 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderMonth0() {
     return `
       <div class="month-screen" data-month="0">
-        <h2>Our beginning 💖</h2>
-        <p style="color:rgba(54,43,57,0.55); margin-top:-.3rem;">The very dramatic reveal.</p>
+        <h2>Our beginning</h2>
+        <p style="color:rgba(54,43,57,0.55); margin-top:-.3rem;">I know I'm slow, but here it goes...</p>
         <div class="video-wrap">
           <iframe
               id="yt"
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>Wil je verkering met me? 🥹</p>
           <button id="answer-yes">JA 💘</button>
           <button id="answer-no">NE 😈</button>
-          <button id="answer-no">MISSCHIEN 😈</button>
+          <button id="answer-maybe">MISSCHIEN 😦</button>
         </div>
       </div>`;
   }
@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionStep = document.getElementById('question-step');
     const yesBtn = document.getElementById('answer-yes');
     const noBtn = document.getElementById('answer-no');
+    const maybeBtn = document.getElementById('answer-maybe');
 
     if (showQuestionBtn) {
       showQuestionBtn.addEventListener('click', () => {
@@ -92,6 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (noBtn) {
       noBtn.addEventListener('click', () => alert("that is an incorrect answer 😌"));
     }
+
+    if (maybeBtn) {
+      maybeBtn.addEventListener('click', () => alert("that is also an incorrect answer 😌"));
+    }
   }
 
   // Month 1
@@ -99,21 +104,38 @@ document.addEventListener('DOMContentLoaded', () => {
     return `
       <div class="month-screen" data-month="1">
         <h2>Month 1 🍊</h2>
-        <p style="color:rgba(54,43,57,0.55); margin-top:-.3rem;">Still choosing you.</p>
-        <div style="background:linear-gradient(140deg, rgba(185,156,255,.55), rgba(255,159,67,.4)); border-radius:1rem; height:180px; display:flex; align-items:center; justify-content:center; color:white; font-weight:600;">
+        <p style="color:rgba(54,43,57,0.55); margin-top:-.3rem;">Highligh: Italy trip</p>
+        <div class="photo-frame gradient-frame">
           <img src="assets/italy.jpg" alt="Italy trip photo" />
         </div>
         <p>We managed to get lost and find each other again (figuratively and literally)</p>
       </div>`;
   }
 
-  function renderLocked(month) {
-    return `
-      <div class="month-screen">
-        <h2>Month ${month} 🔒</h2>
-        <p>This one isn’t cooked yet. Come back next month 👀</p>
-      </div>`;
-  }
+  monthButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const month = btn.dataset.month;
+    if (btn.disabled) {
+      showToast(`Month ${month} isn’t cooked yet 👀`);
+      return;
+    }
+    openMonth(month);
+    });
+  });
+
+  function showToast(message) {
+    // remove existing toast if present
+    const old = document.querySelector('.toast');
+    if (old) old.remove();
+
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.textContent = message;
+    document.body.appendChild(t);
+
+    setTimeout(() => {
+      t.remove();
+    }, 2500);
 
   // Swipe right to go back
   function enableSwipeBack() {
@@ -145,10 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // Days counter
   const daysCounter = document.getElementById('days-counter');
   if (daysCounter) {
-    const startDate = new Date('2025-09-28'); // change to your date
+    const startDate = new Date('2025-09-28');
     const now = new Date();
     const diff = now - startDate;
     const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    daysCounter.textContent = `${days} days of us`;
+    daysCounter.textContent = `${days} days`;
   }
 });
