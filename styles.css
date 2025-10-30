@@ -262,3 +262,8 @@ html, body {
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;  /* stops double-tap zoom */
 }
+
+#landing,
+#landing * {
+  touch-action: auto;
+}
