@@ -96,16 +96,6 @@ header#top-header {
   touch-action: manipulation;
 }
 
-.header-heart {
-  display: inline-flex;
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-  align-items: center;
-  justify-content: center;
-  font-size: .75rem;
-}
-
 .header-pill:active {
   transform: translateY(1px);
 }
